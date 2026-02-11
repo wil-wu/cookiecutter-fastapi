@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  {{ cookiecutter.project_slug }}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${REPO:-{{ cookiecutter.docker_repo }}}/${APP_NAME:-{{ cookiecutter.project_slug }}}:${VERSION:-{{ cookiecutter.project_version }}}
+    container_name: {{ cookiecutter.project_slug }}
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./:/vertu/src
+      - /vertu/src/.venv
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

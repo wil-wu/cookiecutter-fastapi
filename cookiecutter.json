@@ -1,0 +1,10 @@
+{
+  "project_name": "Vertu FastAPI template",
+  "project_slug": "vertu-fastapi-template",
+  "project_version": "1.0.0",
+  "project_description": "Vertu FastAPI template for Vertu",
+  "author": "Vertu",
+  "python_version": "3.12",
+  "service_names": "service",
+  "docker_repo": "docker.vertu.com"
+}
