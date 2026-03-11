@@ -77,7 +77,7 @@ def create_service_dirs() -> None:
     """
     按 service_names 为每个服务创建标准文件：__init__.py, config.py, deps.py, models.py, router.py
     """
-    services_dir = Path.cwd() / "app" / "services"
+    services_dir = Path.cwd() / "src" / "services"
     services_dir.mkdir(parents=True, exist_ok=True)
     names = [s.strip() for s in SERVICE_NAMES.split(",") if s.strip()]
 

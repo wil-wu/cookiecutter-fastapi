@@ -7,7 +7,7 @@ from typing import Any
 
 from fastapi import APIRouter, FastAPI
 
-from app.config import settings
+from .config import settings
 
 logger = logging.getLogger(__name__)
 

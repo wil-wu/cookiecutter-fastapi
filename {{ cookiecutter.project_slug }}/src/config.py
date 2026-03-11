@@ -39,7 +39,7 @@ class GlobalSettings(BaseSettings):
     cors_headers: list[str] = Field(default=["*"], description="允许的 HTTP 头")
 
     # 服务模块
-    services_module: str = Field(default="app.services", description="服务模块")
+    services_module: str = Field(default="src.services", description="服务模块")
 
 
 settings = GlobalSettings()

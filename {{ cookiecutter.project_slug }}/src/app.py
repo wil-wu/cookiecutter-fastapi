@@ -8,8 +8,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.config import settings
-from app.scanner import RouterScanner
+from .config import settings
+from .scanner import RouterScanner
 
 logger = logging.getLogger(__name__)
 
