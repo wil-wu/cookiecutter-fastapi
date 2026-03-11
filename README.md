@@ -44,24 +44,22 @@ cookiecutter gh:user/cookicutter-fastapi
 | `service_names` | 子服务名，逗号分隔（如 `service_a,service_b`） | service |
 | `docker_repo` | Docker 镜像仓库前缀 | docker.vertu.com |
 
-生成完成后，钩子会自动在项目目录内执行 `uv sync` 和 `git init`，并根据 `service_names` 在 `app/services/` 下创建对应子服务目录及标准文件。
+生成完成后，钩子会自动在项目目录内执行 `uv sync` 和 `git init`，并根据 `service_names` 在 `src/services/` 下创建对应子服务目录及标准文件。
 
 ### 3. 进入项目并运行
 
 ```bash
 cd <project_slug>
 uv run main.py
-# 或
-uv run uvicorn main:app --reload
 ```
 
-默认服务地址：`http://localhost:8000`（具体以 `app/config.py` 为准）。
+默认服务地址：`http://localhost:8000`（具体以 `src/config.py` 为准）。
 
 ## 生成的项目结构（示意）
 
 ```
 <project_slug>/
-├── app/
+├── src/
 │   ├── __init__.py
 │   ├── app.py              # 应用工厂
 │   ├── config.py           # 全局配置（pydantic-settings）
