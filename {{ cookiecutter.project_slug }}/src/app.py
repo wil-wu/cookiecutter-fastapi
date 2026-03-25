@@ -1,6 +1,7 @@
 """FastAPI 应用入口"""
 
 import logging
+import asyncio
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
@@ -19,6 +20,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     """应用生命周期管理"""
     # 启动时执行
     logger.info(f"Starting {settings.app_name} v{settings.app_version}")
+    logger.info(f"event loop: {asyncio.get_running_loop()}")
     # 全局对象挂载，数据库连接，httpx连接，embedding模型等
     logger.info("Application startup completed")
 
